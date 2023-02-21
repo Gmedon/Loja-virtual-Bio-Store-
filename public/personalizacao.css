@@ -8,7 +8,7 @@
 
 body {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     background-color: #cfefa6;
     overflow-x: hidden;
 }
@@ -19,7 +19,6 @@ nav {
     justify-content: baseline;
     background-color: white;
     width: 100vw;
-    padding: 15px;
 }
 
 .logo {
@@ -45,13 +44,13 @@ li a {
 
 
 .produtos_text {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
 .input_barra_pesquisa {
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 12px;
     border-radius: 15px;
     background: #f5f7f9;
 }
@@ -72,6 +71,9 @@ input[type="text"]::placeholder {
     text-align: center;
     font-size: 1.4rem;
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carrinho,
@@ -80,7 +82,7 @@ input[type="text"]::placeholder {
     align-items: baseline;
     font-family: 'Noto Serif Tamil',
         serif;
-    font-size: 1.6rem;
+    font-size: 1.1rem;
     gap: 15px;
 }
 
@@ -223,6 +225,7 @@ figure {
     margin: 20px;
     border-radius: 20px;
     transition: 1s;
+    border-radius: 50%;
 }
 
 figcaption {
@@ -235,8 +238,8 @@ figcaption {
 }
 
 figure img {
-    height: 175px;
-    width: 175px;
+    height: 145px;
+    width: 135px;
 }
 
 figure:hover {
