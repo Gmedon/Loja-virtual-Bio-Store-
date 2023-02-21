@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="personalizacao.css">
+    <script src="https://kit.fontawesome.com/6e27575862.js" crossorigin="anonymous"></script>
+    <title>Loja Ecólogica</title>
+</head>
+
+<body>
+    <nav>
+        <ol>
+            <li>
+                <img class="logo" src="/assets/logo.jpeg" alt="">
+            </li>
+            <li>
+                <a href="/">
+                    <p class="produtos_text">Produtos</p>
+                </a>
+            </li>
+            <li class="input_barra_pesquisa">
+            <form method="POST" action="/search">
+                <span><input class="pesquisa" placeholder="Pesquise aqui o seu produto" type="text" name="searchProduct" id=""><i
+                        class="fa-solid fa-magnifying-glass"></i></span>
+            </form>
+            </li>
+            <li>
+                <a href="Carrinho.html">
+                    <p class="carrinho">
+                        <i class="fa-solid fa-cart-shopping"></i>Compras
+                    </p>
+                </a>
+            </li>
+            <li>
+                <a href="Login.html">
+                    <p class="login"><i class="fa-solid fa-user">
+                        </i>Login</p>
+                </a>
+            </li>
+        </ol>
+    </nav>
+    <main>
+        <section class="slider">
+
+            <div class="slides">
+                <!-- Inicio -->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <!-- Fim -->
+
+                <!-- Inicio imagens -->
+                <div class="slide first">
+                    <img src="/assets/banner_promo/Banner1.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/assets/banner_promo/Banner2.png" alt="">
+                </div>
+                <!-- Fim imagens -->
+
+                <!-- Navegação auto -->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                </div>
+
+                <div class="manual-navigation">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                </div>
+            </div>
+        </section>
+
+        <section class="exibicao_produtos">
+            <h2 class="produtos_title">Categorias</h2>
+            <article class="produtos">
+                <a href="/bolsas">
+                    <figure class=" {{#menu.Bolsa}} activemenu {{/menu.Bolsa}}">
+                        <figcaption>Bolsas</figcaption>
+                        <img src="/assets/bolsas/OCEAN.png" alt="">
+                    </figure>
+                </a>
+                <a href="/camisas">
+                    <figure class=" {{#menu.Camisa}} activemenu {{/menu.Camisa}}">
+                        <figcaption>Camisas</figcaption>
+                        <img class="camisa" src="/assets/camisas/Camisa_principal.png" alt="">
+                    </figure>
+                </a>
+                <a href="/oculos">
+                    <figure class=" {{#menu.Oculos}} activemenu {{/menu.Oculos}}">
+                        <figcaption>Óculos</figcaption>
+                        <img src="/assets/oculos/VIVENTI.png" alt="">
+                    </figure>
+                </a>
+                <a href="/tenis">
+                    <figure class=" {{#menu.Tenis}} activemenu {{/menu.Tenis}}">
+                        <figcaption>Tênis</figcaption>
+                        <img src="/assets/tenis/JASONSHARP.png" alt="">
+                    </figure>
+                </a>
+                <a href="/toalhas">
+                    <figure class=" {{#menu.Toalha}} activemenu {{/menu.Toalha}}">
+                        <figcaption>Toalhas</figcaption>
+                        <img src="/assets/toalhas/RONIN.png" alt="">
+                    </figure>
+                </a>
+            </article>
+            <h2 class="produtos_title">
+                <span class="divider"></span>{{tipoProduct}}<span class="divider"></span>
+            </h2>
+            <article class="Area_produtos">
+            {{#Produtos}}
+                <div class="caixa_produtos">
+                    <p>{{nome}}</p>
+                    <figure>
+                        <img src="/assets/camisas/ECLYPSE.png" alt="">
+                        <figcaption>{{descricao}}</figcaption>
+                    </figure>
+                    <div class="precos">
+                        <p><del>$ 129,90</del></p>
+                        <p>$ {{preco}} </p>
+                    </div>
+                </div>
+                {{/Produtos}}
+            </article>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <article class="diferenciais">
+                <div class="entrega">
+                    <i class="fa-solid fa-clock"></i>
+                    <div class="text_icon">
+                        <h3>Entrega expressa</h3>
+                        <p class="second_text">A partir de 1 dia útil</p>
+                    </div>
+                </div>
+                <div class="parcela">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <div class="text_icon">
+                        <h3>Parcele em até 10x sem juros</h3>
+                        <p class="second_text">e divida em 2 cartões</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <div class="divisor"></div>
+        <section class="textos">
+            <div class="info">
+                <p><b>Institucional</b> </p>
+                <p>Sobre a Biostore</p>
+                <p>Seja nosso parceiro</p>
+                <p>Blog</p>
+            </div>
+            <div class="info">
+                <p><b>Ajuda</b></p>
+                <p>Troca e devoluções</p>
+                <p>Entregas</p>
+                <p>Minha conta</p>
+                <p>Meus pedidos</p>
+                <p>Pagamentos</p>
+                <p>Cancelamentos</p>
+                <p>Como Comprar</p>
+            </div>
+            <div class="info">
+                <p><b>Políticas</b></p>
+                <p><a href="#">Regulamentos</a></p>
+                <p>Políticas de privacidade</p>
+                <p>Programa de integridade</p>
+            </div>
+            <div class="info">
+                <p>Central de relacionamento</p>
+                <p class="btn"><b>Tire suas dúvidas</b></p>
+            </div>
+            <div class="redes_sociais">
+                <div class="icons_redes">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <span class="aplicativo">
+                    <i class="fa-solid fa-mobile"></i>
+                    <span class="legenda">
+                        <p><b>App BioStore</b></p>
+                        <p>Conheça as vantagens</p>
+                    </span>
+                </span>
+            </div>
+        </section>
+        </div>
+    </footer>
+</body>
+
+</html>
