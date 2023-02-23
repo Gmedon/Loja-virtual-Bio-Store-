@@ -9,10 +9,21 @@ export const GetProductLanding = async (req: Request, res: Response) => {
     let Produtos = await Products.findAll({
         where: {
             vendas: {
-                [Op.gte]: 10
+                [Op.gte]: 1
             }
-        }
+        },
+        order: [
+            ["vendas", "DESC"]
+        ],
+        limit: 4
     });
+
+    res.render("landingPage", {
+        menu: createObjectmenu(""),
+        Produtos,
+        tipoProduct
+    })
+}
 
     res.render("landingPage", {
         menu: createObjectmenu(""),
