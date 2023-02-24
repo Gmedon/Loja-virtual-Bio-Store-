@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="chat_gpt.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Controle de produtos</title>
+</head>
+
+<body>
+    <main>
+        <form id="form_principal">
+            <label for="nome_produto">
+                <span>Nome do produto: </span>
+                <input type="text" id="nome_produto" name="nome_produto">
+            </label>
+            <label for="descricao_produto">
+                <span>Descrição do produto: </span>
+                <input type="text" id="descricao_produto" name="descricao_produto">
+            </label>
+
+            <label for="cor_produto">
+                <span>Cor: </span>
+                <input type="text" id="cor_produto" name="cor_produto">
+            </label>
+
+            <label for="material_produto">
+                <span>Material: </span>
+                <input type="text" id="material_produto" name="material_produto">
+            </label>
+            <label for="estoque_atual">
+                <span>Estoque atual: </span>
+                <input type="number" id="estoque_atual" name="estoque_atual">
+            </label>
+            <label for="tipo_produto">
+                <span>Categoria: </span>
+                <select name="tipo_produto" id="tipo_produto">
+                    <option value="1">Camisa</option>
+                    <option value="2">Tênis</option>
+                    <option value="3">Óculos</option>
+                    <option value="4">Bolsa</option>
+                    <option value="5">Toalhas</option>
+                </select>
+            </label>
+            <label for="vendas_totais">
+                <span>Vendas: </span>
+                <input type="number" id="vendas_totais" name="vendas_totais">
+            </label>
+            <label for="link_img">
+                <span>Preço do produto: </span>
+                <input type="text" id="link_img" name="link_img">
+            </label>
+            <label for="valor_atual">
+                <span>Preço do produto: </span>
+                <input type="number" id="valor_antigo" name="valor_antigo">
+            </label>
+            <label for="valor_antigo">
+                <span>Preço antigo: </span>
+                <input type="number" id="valor_antigo" name="valor_antigo">
+            </label>
+            <button type="submit">Registrar</button>
+            <button type="submit">Atualizar</button>
+            <button type="submit">Deletar</button>
+        </form>
+
+        <section class="banco_produtos">
+            <h2 class="produtos_title">
+                <span class="divider"></span>Produtos cadastrados<span class="divider"></span>
+            </h2>
+            <div class="caixa_produtos">
+            {{#Produtos}}
+                <figure>
+                    <p>{{id}}</p>
+                    <figcaption>{{nome}}</figcaption>
+                    <img src="{{link}}" alt="">
+                </figure>
+            {{/Produtos}}
+        </section>
+    </main>
+
+
+
+    <script>
+        $(document).ready(function () {
+            // Adiciona um evento de clique em todos os elementos figure
+            $('section.banco_produtos figure').on('click', function () {
+                // Anima a rolagem da página até o elemento form com o ID form_principal
+                $('html, body').animate({
+                    scrollTop: $('form#form_principal').offset().top
+                }, 1000);
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="form.css">
+</body>
+
+</html>

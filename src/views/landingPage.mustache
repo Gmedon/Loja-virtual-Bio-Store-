@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="Login.html">
+                <a href="/login">
                     <p class="login"><i class="fa-solid fa-user">
                         </i>Login</p>
                 </a>
@@ -78,7 +78,7 @@
             <article class="produtos">
                 <a href="/bolsas">
                     <figure class=" {{#menu.Bolsa}} activemenu {{/menu.Bolsa}}">
-                        <img src="{{link}}" alt="">
+                        <img src="/assets/bolsas/NATURE.png" alt="">
                     </figure>
                 </a>
                 <a href="/camisas">
@@ -110,11 +110,12 @@
                 <div class="caixa_produtos">
                     <p>{{nome}}</p>
                     <figure>
-                        <img src="/assets/camisas/ECLYPSE.png" alt="">
+                        <img src="{{link}}" alt="">
                         <figcaption>{{descricao}}</figcaption>
                     </figure>
                     <div class="precos">
-                        <p><del>$ 129,90</del></p>
+                        <p>{{material}} </p>
+                        <p><del>$ {{valor_antigo}}</del></p>
                         <p>$ {{preco}} </p>
                     </div>
                 </div>

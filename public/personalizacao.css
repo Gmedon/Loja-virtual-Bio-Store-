@@ -489,3 +489,192 @@ i {
     font-weight: 400;
     color: #484848;
 }
+
+@media only screen and (min-width: 360px) and (max-width: 1250px) {
+
+    nav {
+        width: 400vw;
+    }
+
+    main {
+        width: 400vw;
+    }
+
+    .logo {
+        height: 75vw;
+        width: 75vw;
+    }
+
+    .produtos_text {
+        font-size: 12vw;
+    }
+
+    .input_barra_pesquisa {
+        margin: 20px;
+    }
+
+    input[type="text"] {
+        width: 111vw;
+        font-size: 12vw;
+    }
+
+    input[type="text"]::placeholder {
+        font-size: 9vw;
+    }
+
+    .carrinho p,
+    .login p {
+        display: none;
+    }
+
+    .carrinho i,
+    .login i {
+        margin: 10px;
+        font-size: 15vw;
+    }
+
+    .slider {
+        width: 400vw;
+        height: 230vw;
+    }
+
+
+    .slide img {
+        width: 400vw;
+        height: 230vw;
+    }
+
+    .exibicao_produtos {
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        width: 390vw;
+    }
+
+    .produtos {
+        gap: 45px;
+        width: 360vw;
+    }
+
+    figure {
+        height: 90vw;
+        width: 90vw;
+    }
+
+    figcaption {
+        font-size: 12vw;
+    }
+
+    figure img {
+        height: 50vw;
+        width: 50vw;
+    }
+
+    figure:hover {
+        scale: 1.2;
+    }
+
+    .produtos_title {
+        font-size: 12vw;
+    }
+
+    .produtos_title .divider {
+        width: 100vw;
+    }
+
+    .Area_produtos {
+        width: 350VW;
+        height: 450vw;
+    }
+
+    .caixa_produtos p {
+        font-size: 12vw;
+    }
+
+    .caixa_produtos figure {
+        width: 55vw;
+        height: 110vw;
+    }
+
+    .caixa_produtos img {
+        width: 50vw;
+        height: 50vw;
+    }
+
+
+    .caixa_produtos figure p {
+        width: 55vw;
+    }
+
+    .caixa_produtos .desconto {
+        font-size: 8vw;
+    }
+
+    .caixa_produtos figure figcaption {
+        font-size: 6vw;
+    }
+
+    .precos p,
+    .precos p del {
+        font-size: 12vw;
+    }
+
+    .precos p del {
+        font-size: 10vw;
+    }
+
+    footer {
+        width: 400vw;
+        height: 200vw;
+    }
+
+
+    .diferenciais {
+        width: 277vw;
+    }
+
+    .text_icon {
+        font-size: 8vw;
+    }
+
+    .second_text {
+        font-size: 8vw;
+    }
+
+    .fa-solid {
+        font-size: 14vw;
+    }
+
+    .divisor {
+        width: 250vw;
+        border-bottom: 1px solid black;
+    }
+
+    .textos div p,
+    .textos div p a {
+        font-size: 8vw;
+    }
+
+    .textos div p b {
+        font-size: 8vw;
+        gap: 50px;
+    }
+
+    .btn {
+        font-size: 8vw;
+    }
+
+    .fa-brands {
+        font-size: 14vw;
+    }
+
+    .aplicativo {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .legenda {
+        font-size: 8vw;
+    }
+}

@@ -13,7 +13,8 @@ interface useProducts extends Model {
     min_estoque: number,
     tipo: string,
     vendas: number,
-    link: string
+    link: string,
+    valor_antigo: number
 };
 
 export const Products = sequelize.define<useProducts>("produtos", {
@@ -50,6 +51,9 @@ export const Products = sequelize.define<useProducts>("produtos", {
     },
     link: {
         type: DataTypes.STRING
+    },
+    valor_antigo: {
+        type: DataTypes.INTEGER
     }
 }, {
     tableName: "produtos",

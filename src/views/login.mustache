@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <script src="login_cadastro.js" defer></script>
+    <title>Página de Login</title>
+</head>
+
+<body>
+    <main>
+        <div class="redes-sociais">
+            <a href="#">
+                <img src="/assets/icons/facebook-svgrepo-com.svg" alt="">
+            </a>
+            <a href="#">
+                <img src="/assets/icons/gmail-svgrepo-com.svg" alt="">
+            </a>
+            <a href="#">
+                <img src="/assets/icons/instagram-2-1-logo-svgrepo-com.svg" alt="">
+            </a>
+        </div>
+        <div class="mensagem">
+            <div class="divider"></div>
+            <h2>Bem Vindo</h2>
+            <div class="divider"></div>
+        </div>
+        <form method="POST" action="/loginefetuado">
+            <label for="Nome" id="insira_nome">
+                <span>Nome</span>
+                <input type="text" name="name" id="nome">
+            </label>
+            <label for="email" id="email">
+                <span>Email</span>
+                <input type="email" name="email" id="email">
+            </label>
+            <label for="confirme_email" id="confirme_email">
+                <span>Confirme o Email</span>
+                <input type="email" name="confirme_email" id="email_confirmacao">
+            </label>
+            <label for="senha" id="senha">
+                <span>Senha</span>
+                <input type="password" name="senha" id="senha">
+            </label>
+            <span class="info_texto" id="texto">
+                <p>Informe seu email, para enviarmos um email de recuperação de senha</p>
+            </span>
+            <div class="fake_links">
+                <p id="registro">Registre-se aqui</p>
+                <p id="senha_esquecida">Esqueceu sua senha ?</p>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="img_canto">
+            <img src="/assets/imagem_canto.png" alt="">
+        </div>
+    </main>
+</body>
+
+</html>

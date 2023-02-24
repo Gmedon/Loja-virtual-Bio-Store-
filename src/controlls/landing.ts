@@ -25,13 +25,6 @@ export const GetProductLanding = async (req: Request, res: Response) => {
     })
 }
 
-    res.render("landingPage", {
-        menu: createObjectmenu(""),
-        Produtos,
-        tipoProduct
-    })
-}
-
 export const GetProductsBolsas = async (req: Request, res: Response) => {
     let tipoProduct = "Bolsas"
     let Produtos = await Products.findAll({
