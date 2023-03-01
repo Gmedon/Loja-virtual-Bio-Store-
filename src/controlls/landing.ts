@@ -104,3 +104,4 @@ export const GetProductsToalhas = async (req: Request, res: Response) => {
         Produtos
     })
 }
+

@@ -19,8 +19,10 @@ export const LoginEfetuado = (req: Request, res: Response) => {
 }
 
 export const AreaAdm = async (req: Request, res: Response) => {
+    let disable = true
     let Produtos = await Products.findAll()
     res.render("formProductControll", {
-        Produtos
+        Produtos,
+        disable
     })
 }

@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="chat_gpt.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="form.css">
     <title>Controle de produtos</title>
 </head>
 
 <body>
     <main>
-        <form id="form_principal">
+        <form method="POST" action="/addproduct" id="form_principal">
             <label for="nome_produto">
                 <span>Nome do produto: </span>
                 <input type="text" id="nome_produto" name="nome_produto">
@@ -35,14 +34,18 @@
                 <span>Estoque atual: </span>
                 <input type="number" id="estoque_atual" name="estoque_atual">
             </label>
+            <label for="estoque_atual">
+                <span>Minimo de estoque: </span>
+                <input type="number" id="min_estoque" name="min_estoque">
+            </label>
             <label for="tipo_produto">
                 <span>Categoria: </span>
                 <select name="tipo_produto" id="tipo_produto">
-                    <option value="1">Camisa</option>
-                    <option value="2">Tênis</option>
-                    <option value="3">Óculos</option>
-                    <option value="4">Bolsa</option>
-                    <option value="5">Toalhas</option>
+                    <option value="Camisa">Camisa</option>
+                    <option value="Tenis">Tênis</option>
+                    <option value="Oculos">Óculos</option>
+                    <option value="Bolsa">Bolsa</option>
+                    <option value="Toalha">Toalhas</option>
                 </select>
             </label>
             <label for="vendas_totais">
@@ -50,20 +53,18 @@
                 <input type="number" id="vendas_totais" name="vendas_totais">
             </label>
             <label for="link_img">
-                <span>Preço do produto: </span>
+                <span>Link da img: </span>
                 <input type="text" id="link_img" name="link_img">
             </label>
             <label for="valor_atual">
                 <span>Preço do produto: </span>
-                <input type="number" id="valor_antigo" name="valor_antigo">
+                <input type="number" id="valor" name="valor">
             </label>
             <label for="valor_antigo">
                 <span>Preço antigo: </span>
                 <input type="number" id="valor_antigo" name="valor_antigo">
             </label>
             <button type="submit">Registrar</button>
-            <button type="submit">Atualizar</button>
-            <button type="submit">Deletar</button>
         </form>
 
         <section class="banco_produtos">
@@ -74,7 +75,9 @@
             {{#Produtos}}
                 <figure>
                     <p>{{id}}</p>
-                    <figcaption>{{nome}}</figcaption>
+                    <a href="/edit/{{id}}">
+                        <figcaption>{{nome}}</figcaption>
+                    </a>
                     <img src="{{link}}" alt="">
                 </figure>
             {{/Produtos}}
@@ -94,8 +97,6 @@
             });
         });
     </script>
-
-    <link rel="stylesheet" href="form.css">
 </body>
 
 </html>
