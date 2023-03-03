@@ -20,7 +20,8 @@ interface useProducts extends Model {
 export const Products = sequelize.define<useProducts>("produtos", {
     id: {
         primaryKey: true,
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        autoIncrement: true
     },
     nome: {
         type: DataTypes.STRING

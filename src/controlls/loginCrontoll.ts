@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
+import { Op } from "sequelize";
 import { Products } from "../models/Products";
+import { Users } from "../models/Users";
 
 export const LoginControll = (req: Request, res: Response) => {
     res.render("login")
@@ -7,14 +9,25 @@ export const LoginControll = (req: Request, res: Response) => {
 
 
 
-export const LoginEfetuado = (req: Request, res: Response) => {
-    let email = "adm@gmail.com"
-    let senha = "adm"
+export const LoginEfetuado = async (req: Request, res: Response) => {
     let emailinserido = req.body.email;
     let senhainserida = req.body.senha;
-    console.log(emailinserido)
-    if (email == emailinserido && senha == senhainserida) {
-       res.redirect("/areadm")
+    let usuarios = await Users.findAll({
+        where: {
+            email: {
+                [Op.like]: emailinserido
+            }
+        }
+    })
+    let senhas = await Users.findAll({
+        where: {
+            senha: {
+                [Op.like]: senhainserida
+            }
+        }
+    })
+    if (usuarios.length > 0 && senhas.length > 0) {
+        res.redirect("/areadm")
     }
 }
 
