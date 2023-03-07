@@ -1,210 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:ital,wght@0,100;0,500;0,700;0,900;1,400;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:ital,wght@0,100;0,500;0,700;0,900;1,400;1,900&display=swap");
 
 /*    font-family: 'Noto Serif Tamil',
    serif;*/
 
 * {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    outline: none;
-    font-family: 'Noto Serif Tamil',
-        serif;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Noto Serif Tamil", serif;
 }
 
 body {
-    background-color: #cfefa6;
+  background-color: #cfefa6;
 }
 
 main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-
-form {
-    display: flex;
-    align-items: center;
-    justify-content: last baseline;
-    flex-flow: row wrap;
-    gap: 10px;
-    padding: 20px;
-    width: 600px;
+.form1 {
+  display: flex;
+  align-items: center;
+  justify-content: last baseline;
+  flex-flow: row wrap;
+  gap: 10px;
+  padding: 20px;
+  width: 600px;
 }
-
 
 label {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
 }
-
 
 input[type="text"],
 input[type="number"],
 select {
-    font-weight: 500;
-    font-size: 1rem;
-    color: #9815dd;
-    background-color: #2ed270;
-    border: 2px solid black;
-    padding: 5px;
-    border-radius: 5px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #9815dd;
+  background-color: #2ed270;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
-
 
 button {
-    cursor: pointer;
-    font-family: 'Noto Serif Tamil',
-        serif;
-    font-weight: 500;
-    color: #9815dd;
-    font-size: 1.1rem;
-    background-color: #2ed270;
-    margin: 20px;
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 20px;
-    outline: none;
+  cursor: pointer;
+  font-family: "Noto Serif Tamil", serif;
+  font-weight: 500;
+  color: #9815dd;
+  font-size: 1.1rem;
+  background-color: #2ed270;
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+  outline: none;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
-.banco_produtos {
+.product {
+  width: 300px;
+  height: 450px;
+  margin: 10px;
+  text-align: center;
+  background-color: #9815dd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.product img {
+  max-width: 60%;
+  height: auto;
+}
+
+.product p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 1250px) {
+  main {
+    width: 400vw;
+    height: 935vw;
+  }
+
+  form {
+    width: 350vw;
+  }
+
+  label {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 1200px;
-}
+    font-size: 12vw;
+  }
 
+  input[type="text"],
+  input[type="number"],
+  select {
+    font-size: 10vw;
+    color: #000;
+  }
 
-.caixa_produtos {
+  button {
+    font-size: 10vw;
+  }
+
+  .banco_produtos {
+    width: 333vw;
+  }
+
+  .produtos_title {
+    font-size: 12vw;
+  }
+
+  .produtos_title .divider {
+    width: 50vw;
+  }
+
+  .caixa_produtos {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     padding: 20px;
     margin: 20px;
-}
+  }
 
+  figcaption {
+    font-size: 12vw;
+  }
 
-.caixa_produtos img {
-    width: 175px;
-    height: 175px;
-}
-
-figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #9815DD;
-    box-shadow: 5px 5px 0px -2px #000000;
-    border: 5px outset #9815DD;
-    border-radius: 20px;
-    transition: 1s;
-    margin: 10px;
-}
-
-figcaption {
-    padding: 20px;
-    text-align: center;
-}
-
-figure:hover {
-    cursor: pointer;
-    scale: 1.1;
-}
-
-.produtos_title {
-    text-align: center;
-    font-weight: bold;
-    position: relative;
-}
-
-.produtos_title .divider {
-    display: inline-block;
-    margin: 0 10px;
-    height: 1px;
-    width: 100px;
-    background-color: #000;
-    position: absolute;
-    top: 50%;
-}
-
-.produtos_title .divider:first-of-type {
-    right: 100%;
-}
-
-.parceiros_title .divider:last-of-type {
-    left: 100%;
-}
-
-
-@media only screen and (min-width: 360px) and (max-width: 1250px) {
-    main {
-        width: 400vw;
-        height: 935vw;
-    }
-
-    form {
-        width: 350vw;
-    }
-
-    label {
-        display: flex;
-        flex-direction: column;
-        font-size: 12vw;
-    }
-
-
-    input[type="text"],
-    input[type="number"],
-    select {
-        font-size: 10vw;
-        color: #000;
-    }
-
-    button {
-        font-size: 10vw;
-    }
-
-    .banco_produtos {
-        width: 333vw;
-    }
-
-    .produtos_title {
-        font-size: 12vw;
-    }
-
-    .produtos_title .divider {
-        width: 50vw;
-    }
-
-
-    .caixa_produtos {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        margin: 20px;
-    }
-
-    figcaption {
-        font-size: 12vw;
-    }
-
-    .caixa_produtos img {
-        width: 55vw;
-        height: 55vw;
-    }
+  .caixa_produtos img {
+    width: 55vw;
+    height: 55vw;
+  }
 }

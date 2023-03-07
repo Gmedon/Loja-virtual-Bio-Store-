@@ -11,7 +11,7 @@
 
 <body>
     <main>
-        <form method="POST" action="/addproduct" id="form_principal">
+        <form class="form1" method="POST" action="/addproduct" id="form_principal">
             <label for="id_produto">
                 <span>id: </span>
                 <input type="text" id="id_produto" name="id" {{#addProductTrue}} value="{{id}}" {{/addProductTrue}}>
@@ -70,23 +70,23 @@
             </label>
             <button type="submit">Registrar</button>
         </form>
-
-        <section class="banco_produtos">
-            <h2 class="produtos_title">
-                <span class="divider"></span>Produtos cadastrados<span class="divider"></span>
-            </h2>
-            <div class="caixa_produtos">
+        <hr/>
+        <section>
+            <h1>Produtos cadastrados</h1><hr/>
+            <div class="container">
             {{#Produtos}}
-            <form method="get" action="/areadm/edit">
-                <figure>
-                        <figcaption>{{nome}}</figcaption>
-                    <img src="{{link}}" alt="">
-                    <input name="id" type="text" value="{{id}}">
-                    <button>Edit</button>
-                </figure>
-            </form>
-            {{/Produtos}}
+            <form class="form2" method="get" action="/areadm/edit">
+		<div class="product">
+			<img src="{{link}}">
+			<p>{{nome}}</p>
+			<input name="id" type="text" value="{{id}}">
+            <button>Edit</button>
+		</div>
+         </form>
+         {{/Produtos}}
+		</div>
         </section>
+        
     </main>
 
 
