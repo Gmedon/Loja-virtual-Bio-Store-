@@ -2,7 +2,7 @@ import { Router } from "express";
 
 import * as landingPage from "../controlls/landing"
 import { LoginControll, LoginEfetuado, AreaAdm } from "../controlls/loginCrontoll";
-import { AddProduct, editProduct, search } from "../controlls/SearchControll";
+import { AddProduct, search, EditProduct, FinProductEdit, DelectProduct } from "../controlls/SearchControll";
 
 
 
@@ -19,6 +19,8 @@ router.get("/login", LoginControll)
 router.get("/areadm", AreaAdm)
 router.post("/loginefetuado", LoginEfetuado)
 router.post('/addproduct', AddProduct)
-router.get("/edit/:id", editProduct)
+router.get('/areadm/edit', EditProduct)
+router.post("/producteditfin", FinProductEdit)
+router.post("/delect", DelectProduct)
 
 export default router;

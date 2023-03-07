@@ -21,12 +21,6 @@ export const search = async (req: Request, res: Response) => {
     })
 };
 
-export const editProduct = async (req: Request, res: Response) => {
-    let Produtos = await Products.findAll()
-    res.render("formProductControll", {
-        Produtos
-    })
-};
 
 export const AddProduct = async (req: Request, res: Response) => {
     let ProdutosTotal = await Products.findAll()
@@ -63,13 +57,61 @@ export const AddProduct = async (req: Request, res: Response) => {
     res.redirect("/areadm")
 };
 
-export const delectProduct = async (req: Request, res: Response) => {
-    let id = 1;
+export const EditProduct = async (req: Request, res: Response) => {
+    let id = req.query.id;
+    let ProductEdit = await Products.findAll({
+        where: {
+            id
+        }
+    })
 
-    let result = Products.findAll({
+    res.render("formDelectEdit", {
+        ProductEdit
+    })
+};
+
+export const FinProductEdit = async (req: Request, res: Response) => {
+    let nome = req.body.nome;
+    let descricao = req.body.descricao;
+    let cor = req.body.cor;
+    let material = req.body.material;
+    let estoque = req.body.estoque;
+    let min_estoque = req.body.min_estoque;
+    let tipo = req.body.tipo_produto;
+    let vendas = req.body.vendas;
+    let link = req.body.link;
+    let preco = req.body.preco;
+    let valor_antigo = req.body.valor_antigo;
+    let id2 = req.body.id;
+    let ProductEdit = await Products.findAll({
+        where: {
+            id: id2
+        }
+    })
+    let produtos = ProductEdit[0]
+    produtos.id = id2;
+    produtos.nome = nome;
+    produtos.descricao = descricao;
+    produtos.cor = cor;
+    produtos.material = material;
+    produtos.estoque = estoque;
+    produtos.min_estoque = min_estoque;
+    produtos.tipo = tipo;
+    produtos.vendas = vendas;
+    produtos.link = link;
+    produtos.preco = preco;
+    produtos.valor_antigo = valor_antigo;
+    await produtos.save()
+
+    res.redirect("/areadm")
+};
+
+export const DelectProduct = async (req: Request, res: Response) => {
+    let id = req.body.id;
+    await Products.destroy({
         where: {
             id
         }
     })
     res.redirect("/areadm")
-};
+}

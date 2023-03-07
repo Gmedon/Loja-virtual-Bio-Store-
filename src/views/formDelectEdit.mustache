@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Produto</title>
+    <style>
+      /* Estilos para o formulário */
+      form {
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+      }
+
+      select {
+        height: 40px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+  {{#ProductEdit}}
+    <form method="POST" action="/producteditfin">
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="id" value="{{id}}" />
+
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" value="{{nome}}"/>
+
+      <label for="descricao">Descrição:</label>
+      <input type="text" id="descricao" name="descricao" value="{{descricao}}" />
+
+      <label for="descricao">Cor:</label>
+      <input type="text" id="cor" name="cor" value="{{cor}}" />
+
+     <label for="descricao">Material:</label>
+      <input type="text" id="material" name="material" value="{{material}}" />
+
+      <label for="descricao">Estoque atual:</label>
+      <input type="text" id="estoque" name="estoque" value="{{estoque}}" />
+
+      <label for="descricao">Minimo de estoque:</label>
+      <input type="text" id="minestoque" name="minestoque" value="{{min_estoque}}" />
+
+      <label for="tipo_produto">Categoria: </label>
+                <select name="tipo_produto" id="tipo_produto">
+                    <option value="Camisa">Camisa</option>
+                    <option value="Tenis">Tênis</option>
+                    <option value="Oculos">Óculos</option>
+                    <option value="Bolsa">Bolsa</option>
+                    <option value="Toalha">Toalhas</option>
+                </select>
+    
+      <label for="descricao">Vendas:</label>
+      <input type="text" id="vendas" name="vendas" value="{{vendas}}" />
+
+      <label for="descricao">Link da img:</label>
+      <input type="text" id="link" name="link" value="{{link}}" />
+
+      <label for="descricao">Preço do produto:</label>
+      <input type="text" id="preco" name="preco" value="{{preco}}" />
+
+      <label for="descricao">Preço antigo:</label>
+      <input type="text" id="valor_antigo" name="valor_antigo" value="{{valor_antigo}}" />
+
+      <button>Editar</button>
+
+      </form>
+      <form method="POST" action="/delect">
+      <h1>Deletar produto</h1>
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="id" value="{{id}}" />
+      <button>Deletar</button>
+      </form>
+      {{/ProductEdit}}
+      </body>
+      </html>
+

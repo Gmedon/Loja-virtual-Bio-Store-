@@ -12,9 +12,13 @@
 <body>
     <main>
         <form method="POST" action="/addproduct" id="form_principal">
+            <label for="id_produto">
+                <span>id: </span>
+                <input type="text" id="id_produto" name="id" {{#addProductTrue}} value="{{id}}" {{/addProductTrue}}>
+            </label>
             <label for="nome_produto">
                 <span>Nome do produto: </span>
-                <input type="text" id="nome_produto" name="nome_produto">
+                <input type="text" id="nome_produto" name="nome_produto" {{#addProductTrue}} value="{{nome}}" {{/addProductTrue}}>
             </label>
             <label for="descricao_produto">
                 <span>Descrição do produto: </span>
@@ -73,14 +77,14 @@
             </h2>
             <div class="caixa_produtos">
             {{#Produtos}}
+            <form method="get" action="/areadm/edit">
                 <figure>
-                    <p>{{id}}</p>
-                    <a href="/edit/{{id}}">
                         <figcaption>{{nome}}</figcaption>
-                    </a>
                     <img src="{{link}}" alt="">
-                    <a href="/editProduct"><button>Edit</button></a>
+                    <input name="id" type="text" value="{{id}}">
+                    <button>Edit</button>
                 </figure>
+            </form>
             {{/Produtos}}
         </section>
     </main>

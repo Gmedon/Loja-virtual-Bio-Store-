@@ -32,10 +32,11 @@ export const LoginEfetuado = async (req: Request, res: Response) => {
 }
 
 export const AreaAdm = async (req: Request, res: Response) => {
-    let disable = true
+    let addProductTrue = true;
+    let urlmodifc = req.params.id;
     let Produtos = await Products.findAll()
     res.render("formProductControll", {
         Produtos,
-        disable
+        addProductTrue
     })
 }
