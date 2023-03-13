@@ -26,7 +26,7 @@ export const LoginEfetuado = async (req: Request, res: Response) => {
     },
   });
   if (usuarios.length > 0 && senhas.length > 0) {
-    res.redirect("/");
+    res.redirect("/areadm");
   }
 };
 
